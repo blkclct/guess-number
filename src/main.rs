@@ -9,7 +9,7 @@ fn main() {
 
     let secret_number = rand::thread_rng().gen_range(1, 101);
 
-    println!("秘密の数: {}", secret_number);
+    println!("秘密の数が出力されました！予測してみてください");
 
     loop {
         println!("推測する数を入力する．");
