@@ -1,6 +1,7 @@
 extern crate rand;
 
 use std::io;
+use std::cmp::Ordering;
 use rand::Rng;
 
 fn main() {
@@ -17,4 +18,10 @@ fn main() {
         .expect("Failed to read line");
 
     println!("You guessed: {}", guess_number);
+
+    match guess_number.cmp(&secret_number) {
+        Ordering::Less => println!("数が小さすぎます！"),
+        Ordering::Greater => println!("数が大きすぎます！"),
+        Ordering::Equal => println!("一致しました！"),
+    }
 }
