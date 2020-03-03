@@ -17,6 +17,9 @@ fn main() {
     io::stdin().read_line(&mut guess_number)
         .expect("Failed to read line");
 
+    let guess_number: u32 = guess_number.trim().parse()
+    .expect("Please type a number.");
+
     println!("You guessed: {}", guess_number);
 
     match guess_number.cmp(&secret_number) {
